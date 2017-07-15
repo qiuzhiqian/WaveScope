@@ -17,8 +17,8 @@ WaveScope::WaveScope(QWidget *parent) :
     ui->setupUi(this);
     QVBoxLayout *centerLayout=(QVBoxLayout *)(ui->centralWidget->layout());
 
-    //xcnt=4500;
-    //wave_period=1;
+    //xcnt=800;
+    //wave_period=5;
     QByteArray ba=ui->le_showcnt->text().toLatin1();
     xcnt=atoi(ui->le_showcnt->text().toLatin1().data());        //X轴范围
     ba=ui->le_runFq->text().toLatin1();
@@ -223,7 +223,7 @@ void WaveScope::slt_change_xcnt()
     xcnt=atoi(ba.data());        //X轴范围
 
     if(xcnt<=0)
-        xcnt=2500;
+        xcnt=800;
     qDebug()<<xcnt;
 
 
@@ -245,7 +245,7 @@ void WaveScope::slt_change_period()
     wave_period=atoi(ba.data());      //刷图周期
 
     if(wave_period<=0)
-        wave_period=1;
+        wave_period=5;
 }
 
 //串口部分函数
